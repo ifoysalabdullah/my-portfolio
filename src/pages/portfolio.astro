@@ -36,6 +36,18 @@ const vector3D = ["c90bDgzg3HI", "dQw4w9WgXcQ", "gAqEnz0TSoA", "YuyvHwnlFZRktAZH
         ))}
 
       </div>
+      <div style="margin-bottom: 80px;">
+      <h2 style="font-size: 2rem; margin-bottom: 25px;" class="gradient-text"> Motion Design</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        
+        {vector3D.map((id) => (
+          <div class="vid-card" onclick={`openLightbox('${id}')`}>
+            <img src={`https://img.youtube.com/vi/${id}/maxresdefault.jpg`} alt="Video Thumbnail" />
+            <div class="vid-play-icon">▶</div>
+          </div>
+        ))}
+
+      </div>
     </div>
   </main>
 </BaseLayout>
