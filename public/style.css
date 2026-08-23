@@ -67,17 +67,9 @@ body:not(.day-mode) .clouds { opacity: 0; }
 }
 
 /* Moving Clouds */
-/* Moving Clouds */
-.cloud { 
-  position: absolute; 
-  background: rgb(0, 128, 255); 
-  border-radius: 100px; 
-  filter: blur(75px); 
-  opacity: 0.8; 
-  pointer-events: none;
-}
-.cloud-ltr { animation: driftLtr 25s linear infinite; }
-.cloud-rtl { animation: driftRtl 35s linear infinite; }
+.cloud { position: absolute; background: rgb(0, 128, 255); border-radius: 100px; filter: blur(75px); opacity: 0.8; }
+.cloud-ltr { animation: driftLtr 3s linear infinite; }
+.cloud-rtl { animation: driftRtl 4s linear infinite; }
 
 /* 3D Glass Buttons */
 .glass-button { 
