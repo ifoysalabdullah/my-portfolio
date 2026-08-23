@@ -67,6 +67,7 @@ body:not(.day-mode) .clouds { opacity: 0; }
 }
 
 /* Moving Clouds */
+/* Moving Clouds */
 .cloud { 
   position: absolute; 
   background: rgb(0, 128, 255); 
@@ -75,7 +76,6 @@ body:not(.day-mode) .clouds { opacity: 0; }
   opacity: 0.8; 
   pointer-events: none;
 }
-
 .cloud-ltr { animation: driftLtr 25s linear infinite; }
 .cloud-rtl { animation: driftRtl 35s linear infinite; }
 
