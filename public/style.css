@@ -192,7 +192,6 @@ body.day-mode .step-num { -webkit-text-stroke: 1px var(--primary); }
 
 @keyframes driftLtr { 0% { transform: translateX(-20vw); } 100% { transform: translateX(120vw); } }
 @keyframes driftRtl { 0% { transform: translateX(120vw); } 100% { transform: translateX(-20vw); } }
-}
 
 @media (max-width: 768px) {
   .contact-faq-split, .stats-grid { grid-template-columns: 1fr; }
