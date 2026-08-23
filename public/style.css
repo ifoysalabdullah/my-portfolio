@@ -40,6 +40,7 @@ a { text-decoration: none; color: inherit; }
   position: absolute; width: 500px; height: 500px; border-radius: 50%;
   background: var(--celestial-orb); filter: blur(50px);
   transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10; /* This forces the sun to stay in front */
 }
 body:not(.day-mode) .orb { top: -100px; right: 10%; }
 body.day-mode .orb { top: -60px; left: 10%; right: auto; animation: sunSway 10s ease-in-out infinite alternate; }
@@ -67,9 +68,17 @@ body:not(.day-mode) .clouds { opacity: 0; }
 }
 
 /* Moving Clouds */
-.cloud { position: absolute; background: rgb(0, 128, 255); border-radius: 100px; filter: blur(75px); opacity: 0.8; }
-.cloud-ltr { animation: driftLtr 3s linear infinite; }
-.cloud-rtl { animation: driftRtl 4s linear infinite; }
+.cloud { 
+  position: absolute; 
+  background: rgb(0, 128, 255); 
+  border-radius: 100px; 
+  filter: blur(75px); 
+  opacity: 0.8; 
+  pointer-events: none;
+  z-index: 5; /* This pushes the clouds behind the sun */
+}
+.cloud-ltr { animation: driftLtr 100s linear infinite; }
+.cloud-rtl { animation: driftRtl 130s linear infinite; }
 
 /* 3D Glass Buttons */
 .glass-button { 
