@@ -48,8 +48,47 @@ body.day-mode .orb { top: -60px; left: 10%; right: auto; animation: sunSway 10s 
 body.day-mode .stars { opacity: 0; }
 body:not(.day-mode) .clouds { opacity: 0; }
 
-.star { position: absolute; background: white; border-radius: 50%; filter: blur(1px); animation: twinkle 3s infinite alternate; }
-.shooting-star { position: absolute; width: 120px; height: 2px; background: linear-gradient(90deg, #00ffff, transparent); filter: blur(1px); transform: rotate(-45deg); animation: shoot 5s linear infinite; opacity: 0; }
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 3s infinite alternate ease-in-out;
+}
+
+.shooting-star {
+  position: absolute;
+  width: 140px;
+  height: 2px;
+  background: linear-gradient(90deg, #00ffff, rgba(0, 255, 255, 0.4), transparent);
+  filter: drop-shadow(0 0 6px #00ffff);
+  transform: rotate(-35deg);
+  opacity: 0;
+  animation: shoot 8s ease-in-out infinite;
+}
+
+/* Ambient Day Clouds with Parallax Depth */
+.cloud {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.cloud-1 {
+  background: radial-gradient(circle, rgba(0, 150, 255, 0.7), rgba(0, 220, 255, 0.3), transparent 70%);
+  animation: driftSlow 80s linear infinite;
+}
+
+.cloud-2 {
+  background: radial-gradient(circle, rgba(0, 120, 255, 0.5), rgba(100, 200, 255, 0.2), transparent 70%);
+  animation: driftMedium 60s linear infinite;
+}
+
+.cloud-3 {
+  background: radial-gradient(circle, rgba(0, 180, 255, 0.4), transparent 70%);
+  animation: driftReverse 90s linear infinite;
+}
 
 /* Moving Clouds */
 .cloud { position: absolute; background: rgb(0, 128, 255); border-radius: 100px; filter: blur(75px); opacity: 0.8; }
@@ -160,11 +199,30 @@ body.day-mode .step-num { -webkit-text-stroke: 1px var(--primary); }
 .service-step:hover .service-content { border-left-color: var(--cyan); transform: translateX(10px); box-shadow: 0 10px 30px var(--cyan-glow); }
 
 /* Animations */
-@keyframes sunSway { 0% { transform: translate(0, 0); } 100% { transform: translate(30px, 15px); } }
-@keyframes twinkle { 0% { opacity: 0.2; transform: scale(0.8); } 100% { opacity: 1; transform: scale(1.2); box-shadow: 0 0 5px white; } }
-@keyframes shoot { 0% { transform: translate(0, 0) rotate(-45deg); opacity: 1; } 15% { transform: translate(-800px, 800px) rotate(-45deg); opacity: 0; } 100% { opacity: 0; } }
-@keyframes driftLtr { 0% { transform: translateX(-20vw); } 100% { transform: translateX(120vw); } }
-@keyframes driftRtl { 0% { transform: translateX(120vw); } 100% { transform: translateX(-20vw); } }
+@keyframes shoot {
+  0% { transform: translate(0, 0) rotate(-35deg); opacity: 0; }
+  2% { opacity: 1; }
+  12% { transform: translate(-700px, 450px) rotate(-35deg); opacity: 0; }
+  100% { transform: translate(-700px, 450px) rotate(-35deg); opacity: 0; }
+}
+
+@keyframes driftSlow {
+  0% { transform: translateX(-30vw) translateY(0); }
+  50% { transform: translateX(45vw) translateY(20px); }
+  100% { transform: translateX(120vw) translateY(0); }
+}
+
+@keyframes driftMedium {
+  0% { transform: translateX(-40vw) translateY(0); }
+  50% { transform: translateX(40vw) translateY(-25px); }
+  100% { transform: translateX(120vw) translateY(0); }
+}
+
+@keyframes driftReverse {
+  0% { transform: translateX(120vw) translateY(0); }
+  50% { transform: translateX(40vw) translateY(30px); }
+  100% { transform: translateX(-40vw) translateY(0); }
+}
 
 @media (max-width: 768px) {
   .contact-faq-split, .stats-grid { grid-template-columns: 1fr; }
