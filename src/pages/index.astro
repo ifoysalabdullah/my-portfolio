@@ -1,17 +1,98 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Foysal Abdullah | Motion Designer">
+  <main class="container" style="padding-top: 140px; text-align: center;">
+    
+    <style>
+      .inline-hero-wrapper {
+        position: relative; display: inline-flex; padding: 2px; border-radius: 9999px; overflow: hidden; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      }
+      .inline-hero-wrapper::before {
+        content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+        background: conic-gradient(transparent, rgba(0, 128, 255, 0.8), rgba(0, 255, 255, 0.8), transparent 30%);
+        animation: inline-border-rotate 4s linear infinite;
+      }
+      @keyframes inline-border-rotate { 100% { transform: rotate(360deg); } }
+    </style>
+
+    <div class="inline-hero-wrapper">
+      <div style="position: relative; display: flex; align-items: center; gap: 8px; padding: 10px 24px; border-radius: 9999px; background: rgba(0, 255, 255, 0.1); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); color: #0088ff; font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.5px; z-index: 1; border: 1px solid rgba(255, 255, 255, 0.05);">
+        <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: #00ffff;">
+          <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z"/>
+        </svg>
+        MOTION DESIGNER & VIDEO EDITOR
+      </div>
+    </div>
+    
+    <h1 style="font-size: 3.8rem; font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1.5px;">
+      Motion Design that make your brand <br/>
+      <span class="gradient-text">impossible to ignore</span>
+    </h1>
+    <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 650px; margin: 0 auto 40px;">
+      I turn static ideas into scroll-stopping visuals — built for SaaS, startups, and brands that want to stand out.
+    </p>
+
+    <!-- Buttons -->
+    <div style="display: flex; justify-content: center; gap: 15px; margin-bottom: 60px;">
+      <button data-cal-link="foysalabdullah/30min" data-cal-namespace="30min" class="glass-button primary">Contact Me</button>
+      <a href="/portfolio" class="glass-button">See Portfolio</a>
+    </div>
+
+    <!-- Muted Autoplay Video (Click to Open Lightbox with sound) -->
+    <div class="home-video-wrapper" onclick="openLightbox('1iWTl8DM7Rg')">
+      <div class="home-video-overlay">
+        <div class="home-play-btn">▶</div>
+      </div>
+      <iframe src="https://www.youtube.com/embed/1iWTl8DM7Rg?autoplay=1&mute=1&controls=0&loop=1&playlist=1iWTl8DM7Rg&rel=0&origin=http://localhost:4321" title="Showreel Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="glass-panel stat-card">
+        <div class="stat-num gradient-text"><span class="counter" data-target="17">0</span></div>
+        <p style="font-weight: 600;">Motion Projects Created</p>
+      </div>
+      <div class="glass-panel stat-card">
+        <div class="stat-num gradient-text"><span class="counter" data-target="7">0</span></div>
+        <p style="font-weight: 600;">Creative Tools Mastered</p>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">(After Effects, Premiere, DaVinci, Figma, Illustrator, Photoshop + code)</p>
+      </div>
+      <div class="glass-panel stat-card">
+        <div class="stat-num gradient-text"><span class="counter" data-target="1.5">0</span></div>
+        <p style="font-weight: 600;">Years of Focused Practice</p>
+      </div>
+    </div>
+
+    <!-- Exact FAQ & Contact Split -->
+    <div class="contact-faq-split" style="text-align: left;">
+      <div class="contact-card">
+        <div style="width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto; font-size: 1.5rem;">💬</div>
+        <h3>Got Questions?</h3>
+        <p>FAQs can only do so much. For everything else, feel free to contact me directly.</p>
+        <button data-cal-link="foysalabdullah/30min" data-cal-namespace="30min" class="btn-blue">Book a Call</button>
+        <a href="https://api.whatsapp.com/send/?phone=8801352302537" target="_blank"><button class="btn-dark">WhatsApp Direct</button></a>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-box active">
+          <div class="faq-box-header">What style do you specialize in? <div class="faq-box-icon">+</div></div>
+          <div class="faq-box-content">As someone who's been in this field for years and finished tons of both personal and client projects, I can recreate any reference with ease. My main styles are SaaS explainers and motion graphics.</div>
+        </div>
+        <div class="faq-box">
+          <div class="faq-box-header">What are your rates per video? <div class="faq-box-icon">+</div></div>
+          <div class="faq-box-content">It depends on your reference style and complexity. Prices start from $500.</div>
+        </div>
+        <div class="faq-box">
+          <div class="faq-box-header">Do you provide revisions? <div class="faq-box-icon">+</div></div>
+          <div class="faq-box-content">Yes, I provide 3 free revisions as standard. Major changes outside the brief require an additional 30%.</div>
+        </div>
+        <div class="faq-box">
+          <div class="faq-box-header">How long does a project take? <div class="faq-box-icon">+</div></div>
+          <div class="faq-box-content">It usually takes 4-7 days. Larger projects vary, but I always set clear timelines upfront.</div>
+        </div>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

@@ -1,0 +1,21 @@
+---
+import BaseLayout from './BaseLayout.astro';
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+  <main class="container" style="padding-top: 140px; max-width: 800px; padding-bottom: 80px;">
+    <article class="glass-panel" style="padding: 50px; line-height: 1.8;">
+      <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 10px;">{frontmatter.title}</h1>
+      <p style="color: var(--cyan); margin-bottom: 30px;">{frontmatter.date}</p>
+      
+      <hr style="border: 0; border-top: 1px solid var(--glass-border); margin-bottom: 30px;" />
+      
+      <!-- This <slot /> is where your Markdown text will magically appear -->
+      <div>
+        <slot />
+      </div>
+      
+    </article>
+  </main>
+</BaseLayout>
