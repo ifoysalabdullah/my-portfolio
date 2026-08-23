@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://foysalabdullah.com/sitemap-index.xml
