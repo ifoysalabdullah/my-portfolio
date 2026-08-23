@@ -2,52 +2,41 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 // Define your video IDs here ONCE. 
-// To update a video, just change the ID in this list.
-const vector2D = ["1iWTl8DM7Rg", "dQw4w9WgXcQ", "gAqEnz0TSoA", "rMYaNSIV_Fw"];
-const vector3D = ["c90bDgzg3HI", "dQw4w9WgXcQ", "gAqEnz0TSoA", "YuyvHwnlFZRktAZHHELzGBrskCHChJ"];
+const vector2D = ["1iWTl8DM7Rg", "1iWTl8DM7Rg", "1iWTl8DM7Rg", "1iWTl8DM7Rg"];
+const motion25D = ["1iWTl8DM7Rg", "1iWTl8DM7Rg", "1iWTl8DM7Rg", "1iWTl8DM7Rg"];
 ---
 
 <BaseLayout title="Portfolio | Foysal Abdullah">
   <main class="container" style="padding-top: 140px; padding-bottom: 80px;">
     <h1 style="text-align: center; font-size: 3.5rem; font-weight: 800; margin-bottom: 80px;">My <span class="gradient-text">Portfolio</span></h1>
     
+    <!-- 1. 2D Vector Animation -->
     <div style="margin-bottom: 80px;">
-      <h2 style="font-size: 2rem; margin-bottom: 25px;" class="gradient-text"> SaaS video</h2>
+      <h2 style="font-size: 2rem; margin-bottom: 25px;" class="gradient-text">01 / 2D Vector Animation</h2>
+      <p style="color: var(--text-muted); margin-bottom: 20px;">Clean, crisp scalable vector animations perfect for product explainers.</p>
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-        
         {vector2D.map((id) => (
           <div class="vid-card" onclick={`openLightbox('${id}')`}>
             <img src={`https://img.youtube.com/vi/${id}/maxresdefault.jpg`} alt="Video Thumbnail" />
             <div class="vid-play-icon">▶</div>
           </div>
         ))}
-
       </div>
     </div>
+
+    <!-- 2. 2.5D Motion Graphics -->
     <div style="margin-bottom: 80px;">
-      <h2 style="font-size: 2rem; margin-bottom: 25px;" class="gradient-text"> Motion Design</h2>
+      <h2 style="font-size: 2rem; margin-bottom: 25px;" class="gradient-text">02 / 2.5D Motion Graphics</h2>
+      <p style="color: var(--text-muted); margin-bottom: 20px;">Adding depth to 2D assets using dynamic camera moves and parallax.</p>
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-        
-        {vector3D.map((id) => (
+        {motion25D.map((id) => (
           <div class="vid-card" onclick={`openLightbox('${id}')`}>
             <img src={`https://img.youtube.com/vi/${id}/maxresdefault.jpg`} alt="Video Thumbnail" />
             <div class="vid-play-icon">▶</div>
           </div>
         ))}
-
-      </div>
-      <div style="margin-bottom: 80px;">
-      <h2 style="font-size: 2rem; margin-bottom: 25px;" class="gradient-text"> Motion Design</h2>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-        
-        {vector3D.map((id) => (
-          <div class="vid-card" onclick={`openLightbox('${id}')`}>
-            <img src={`https://img.youtube.com/vi/${id}/maxresdefault.jpg`} alt="Video Thumbnail" />
-            <div class="vid-play-icon">▶</div>
-          </div>
-        ))}
-
       </div>
     </div>
+
   </main>
 </BaseLayout>
