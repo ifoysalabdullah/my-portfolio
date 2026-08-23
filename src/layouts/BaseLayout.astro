@@ -32,7 +32,7 @@ const {
   <script is:inline src="/videos.js"></script>
 
 
-  
+
   <!-- Cal.com embed initialization -->
   <script is:inline type="text/javascript">
     (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
@@ -53,8 +53,8 @@ const {
       <div class="shooting-star" style="top: 30%; left: 40%; animation-delay: 3s;"></div>
     </div>
     <div class="clouds">
-      <div class="cloud" style="top: 15%; width: 300px; height: 100px; animation-duration: 5s;"></div>
-      <div class="cloud" style="top: 60%; width: 500px; height: 150px; animation-duration: 7s; animation-delay: 10s;"></div>
+      <div class="cloud cloud-ltr" style="top: 15%; width: 350px; height: 120px;"></div>
+      <div class="cloud cloud-rtl" style="top: 60%; width: 500px; height: 150px; animation-delay: -20s;"></div>
     </div>
   </div>
 
