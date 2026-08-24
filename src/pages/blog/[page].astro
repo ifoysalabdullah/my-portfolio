@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths({ paginate }) {
+  // Fetch all your markdown blog posts
+  const allPosts = await Astro.glob('./*.md');
+  
+  // Sort them by date (newest first)
+  const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
+  
+  // Generate pages with exactly 10 posts per page
+  return paginate(sortedPosts, { pageSize: 10 });
+}
+
+const { page } = Astro.props;
+---
+
+<BaseLayout title="Blog | Foysal Abdullah" description="Read my latest articles, tutorials, and workflows.">
+  <main class="container" style="padding-top: 140px; padding-bottom: 80px;">
+    <h1 style="text-align: center; font-size: 3.5rem; font-weight: 800; margin-bottom: 60px;">My <span class="gradient-text">Blog</span></h1>
+    
+    <!-- Blog Post List -->
+    <div style="display: grid; gap: 30px; max-width: 800px; margin: 0 auto;">
+      {page.data.map((post) => (
+        <a href={post.url} class="glass-panel" style="display: block; padding: 30px; transition: 0.3s; text-decoration: none;">
+          <h2 style="font-size: 1.8rem; margin-bottom: 10px; color: var(--text-main);">{post.frontmatter.title}</h2>
+          <p style="color: var(--text-muted); margin-bottom: 15px;">{post.frontmatter.description}</p>
+          <span style="color: var(--cyan); font-size: 0.9rem; font-weight: 600;">{post.frontmatter.date}</span>
+        </a>
+      ))}
+    </div>
+    
+    <!-- Next & Previous Buttons -->
+    <div style="display: flex; justify-content: center; gap: 20px; margin-top: 60px;">
+      {page.url.prev ? <a href={page.url.prev} class="glass-button">← Previous</a> : null}
+      {page.url.next ? <a href={page.url.next} class="glass-button">Next →</a> : null}
+    </div>
+  </main>
+</BaseLayout>

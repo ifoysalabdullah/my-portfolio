@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Search | Foysal Abdullah" description="Search my portfolio and blog posts.">
+  <main class="container" style="padding-top: 140px; padding-bottom: 80px; max-width: 800px;">
+    <h1 style="font-size: 3.5rem; font-weight: 800; margin-bottom: 40px; text-align: center;">Search <span class="gradient-text">Everything</span></h1>
+    
+    <div class="glass-panel" style="padding: 30px;">
+      <!-- Pagefind CSS & JS Tools -->
+      <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+      <script is:inline src="/pagefind/pagefind-ui.js"></script>
+      
+      <!-- The Search Bar -->
+      <div id="search"></div>
+      
+      <!-- Initializes the search bar -->
+      <script is:inline>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            new PagefindUI({ element: "#search", showSubResults: true });
+        });
+      </script>
+    </div>
+  </main>
+</BaseLayout>
