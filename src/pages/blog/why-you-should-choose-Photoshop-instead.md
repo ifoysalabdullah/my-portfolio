@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: "How to Create a High-Converting SaaS Explainer Video"
-description: "Discover the step-by-step workflow for producing engaging SaaS explainer videos that turn complex software features into scroll-stopping visuals."
+title: "Why you should choose Photoshop instead"
+description: "There are GIMP, Krita, Photopea, even Canva. But can they actually stand beside Photoshp?"
 date: "August 24, 2026"
 image: "/blog-thumbnails/saas-explainer.jpg"
 ---
