@@ -247,6 +247,50 @@ body.day-mode .step-num { -webkit-text-stroke: 1px var(--primary); }
 @keyframes driftLtr { 0% { transform: translateX(-20vw); } 100% { transform: translateX(120vw); } }
 @keyframes driftRtl { 0% { transform: translateX(120vw); } 100% { transform: translateX(-20vw); } }
 
+/* --- Pagefind Search Glass Theme --- */
+:root {
+  --pagefind-ui-primary: var(--cyan);
+  --pagefind-ui-text: var(--text-main);
+  --pagefind-ui-background: var(--glass-bg);
+  --pagefind-ui-border: var(--glass-border);
+  --pagefind-ui-tag: var(--card-bg);
+  --pagefind-ui-border-radius: 16px;
+  --pagefind-ui-font: 'Inter', sans-serif;
+}
+
+/* Force the glass effect on the input box */
+.pagefind-ui__search-input {
+  backdrop-filter: blur(16px);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2) !important;
+  font-weight: 500;
+}
+body.day-mode .pagefind-ui__search-input {
+  box-shadow: inset 0 2px 4px rgba(0,136,255,0.1) !important;
+}
+
+/* Fix the unreadable excerpt text */
+.pagefind-ui__result-excerpt {
+  color: var(--text-muted) !important;
+  line-height: 1.6;
+}
+
+/* Make the highlight text pop with cyan instead of a yellow box */
+.pagefind-ui__result mark {
+  background: transparent !important;
+  color: var(--cyan) !important;
+  font-weight: 800 !important;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+}
+
+/* Add some breathing room to the results */
+.pagefind-ui__drawer:not(.pagefind-ui__hidden) {
+  margin-top: 30px;
+}
+.pagefind-ui__result {
+  border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+  padding: 20px 0 !important;
+}
+
 @media (max-width: 768px) {
   .contact-faq-split, .stats-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
