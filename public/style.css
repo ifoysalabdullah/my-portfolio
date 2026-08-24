@@ -153,10 +153,37 @@ footer { display: flex; justify-content: center; padding: 0 20px 20px 20px; marg
 
 /* Pop-up Lightbox */
 .lightbox { 
-  position: fixed; inset: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(15px); z-index: 1000; 
-  display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: 0.3s ease-out; 
+  position: fixed; inset: 0; background: rgba(0,0,0,0.98); /* Almost solid black to hide YouTube's bars */
+  backdrop-filter: blur(15px); z-index: 1000; 
+  display: flex; justify-content: center; align-items: center; 
+  opacity: 0; pointer-events: none; transition: 0.3s ease-out; 
 }
 .lightbox.active { opacity: 1; pointer-events: auto; }
+
+.lightbox-content { 
+  width: 100vw; height: 100vh; /* Takes up the entire screen */
+  display: flex; justify-content: center; align-items: center;
+  position: relative; transform: scale(0.95); transition: 0.3s ease-out; 
+}
+.lightbox.active .lightbox-content { transform: scale(1); }
+
+#lightbox-iframe-container { 
+  width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; 
+}
+
+#lightbox-iframe-container iframe { 
+  width: 100vw; height: 100vh; max-width: 100%; max-height: 100%;
+  border: none; outline: none; background: transparent; 
+  /* Zero borders, zero shadows. Let YouTube scale naturally. */
+}
+
+/* Move the close button inside the screen so it's always clickable */
+.lightbox-close { 
+  position: absolute; top: 20px; right: 30px; color: white; font-size: 3rem; 
+  cursor: pointer; transition: 0.2s; line-height: 1; z-index: 1001; 
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+.lightbox-close:hover { color: var(--cyan); transform: scale(1.1); }
 
 /* The container scales to fit the screen while keeping the video tight */
 .lightbox-content { 
@@ -221,7 +248,6 @@ body.day-mode .step-num { -webkit-text-stroke: 1px var(--primary); }
 @media (max-width: 768px) {
   .contact-faq-split, .stats-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
-  .lightbox-content { width: 95vw; height: auto; }
   .service-step { flex-direction: column; gap: 10px; }
   .service-step:hover .service-content { transform: none; border-left: none; border-top: 4px solid var(--cyan); }
 }
