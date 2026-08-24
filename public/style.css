@@ -187,7 +187,7 @@ footer { display: flex; justify-content: center; padding: 0 20px 20px 20px; marg
 .lightbox-close { 
   position: fixed !important; 
   top: 20px !important; 
-  right: 20px !important; /* Strictly locks it to the top-right */
+  left: 20px !important; /* Strictly locks it to the top-right */
   width: 45px !important;
   height: 45px !important;
   display: flex !important;
