@@ -252,4 +252,17 @@ body.day-mode .step-num { -webkit-text-stroke: 1px var(--primary); }
   .nav-links { display: none; }
   .service-step { flex-direction: column; gap: 10px; }
   .service-step:hover .service-content { transform: none; border-left: none; border-top: 4px solid var(--cyan); }
+  
+  /* Mobile Footer Fixes */
+  .footer-inner { 
+    flex-direction: column; 
+    text-align: center; 
+    gap: 16px; 
+    border-radius: 24px; /* Changes the pill shape to a nice rounded box on mobile */
+    padding: 24px;
+  }
+  .footer-links { 
+    justify-content: center; 
+    flex-wrap: wrap; 
+  }
 }
