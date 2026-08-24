@@ -14,7 +14,9 @@ const motion25D = ["da7igrK6fhk", "pIdE7P860D4", "1iWTl8DM7Rg", "8qQW4LTWgtc"];
     <div style="margin-bottom: 80px;">
       <h2 style="font-size: 2rem; margin-bottom: 25px;" class="gradient-text">01 / 2D Vector Animation</h2>
       <p style="color: var(--text-muted); margin-bottom: 20px;">Clean, crisp scalable vector animations perfect for product explainers.</p>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      
+      <!-- Responsive Grid for Desktop & Mobile -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
         {vector2D.map((id) => (
           <div class="vid-card" onclick={`openLightbox('${id}')`}>
             <img src={`https://img.youtube.com/vi/${id}/maxresdefault.jpg`} alt="Video Thumbnail" />
@@ -28,7 +30,9 @@ const motion25D = ["da7igrK6fhk", "pIdE7P860D4", "1iWTl8DM7Rg", "8qQW4LTWgtc"];
     <div style="margin-bottom: 80px;">
       <h2 style="font-size: 2rem; margin-bottom: 25px;" class="gradient-text">02 / 2.5D Motion Graphics</h2>
       <p style="color: var(--text-muted); margin-bottom: 20px;">Adding depth to 2D assets using dynamic camera moves and parallax.</p>
-      <div class="portfolio-grid">
+      
+      <!-- Responsive Grid for Desktop & Mobile -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
         {motion25D.map((id) => (
           <div class="vid-card" onclick={`openLightbox('${id}')`}>
             <img src={`https://img.youtube.com/vi/${id}/maxresdefault.jpg`} alt="Video Thumbnail" />
