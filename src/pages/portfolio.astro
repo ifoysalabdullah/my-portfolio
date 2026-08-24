@@ -28,7 +28,7 @@ const motion25D = ["1iWTl8DM7Rg", "1iWTl8DM7Rg", "1iWTl8DM7Rg", "1iWTl8DM7Rg"];
     <div style="margin-bottom: 80px;">
       <h2 style="font-size: 2rem; margin-bottom: 25px;" class="gradient-text">02 / 2.5D Motion Graphics</h2>
       <p style="color: var(--text-muted); margin-bottom: 20px;">Adding depth to 2D assets using dynamic camera moves and parallax.</p>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <div class="portfolio-grid">
         {motion25D.map((id) => (
           <div class="vid-card" onclick={`openLightbox('${id}')`}>
             <img src={`https://img.youtube.com/vi/${id}/maxresdefault.jpg`} alt="Video Thumbnail" />

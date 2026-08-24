@@ -140,6 +140,11 @@ footer { display: flex; justify-content: center; padding: 0 20px 20px 20px; marg
 .home-video-wrapper:hover .home-play-btn { opacity: 1; transform: scale(1); }
 
 /* Portfolio Video Cards */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
 .vid-card { position: relative; border-radius: 16px; overflow: hidden; cursor: pointer; aspect-ratio: 16/9; border: 1px solid var(--glass-border); border-bottom: 2px solid rgba(255,255,255,0.1); transition: 0.3s; box-shadow: var(--glass-shadow); }
 .vid-card:hover { border-color: var(--cyan); box-shadow: 0 10px 30px var(--cyan-glow); transform: translateY(-5px); }
 .vid-card img { width: 100%; height: 100%; object-fit: cover; }
@@ -149,7 +154,7 @@ footer { display: flex; justify-content: center; padding: 0 20px 20px 20px; marg
 /* Pop-up Lightbox */
 .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.9); backdrop-filter: blur(15px); z-index: 1000; display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: 0.4s; }
 .lightbox.active { opacity: 1; pointer-events: auto; }
-.lightbox-content { width: 80vw; height: 80vh; max-width: 1400px; position: relative; border-radius: 16px; overflow: visible; box-shadow: 0 0 50px rgba(0,255,255,0.2); border: 1px solid var(--cyan); transform: scale(0.95); transition: 0.4s; background: #000; }
+.lightbox-content { width: 95vw; height: 90vh; max-width: 1400px; position: relative; border-radius: 16px; overflow: visible; box-shadow: 0 0 50px rgba(0,255,255,0.2); border: 1px solid var(--cyan); transform: scale(0.95); transition: 0.4s; background: #000; }
 .lightbox.active .lightbox-content { transform: scale(1); }
 #lightbox-iframe-container { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; } /* Fixed the shrinking video issue */
 #lightbox-iframe-container iframe { width: 100%; height: 100%; border: none; border-radius: 16px; object-fit: cover; }
