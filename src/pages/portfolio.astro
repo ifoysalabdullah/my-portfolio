@@ -2,22 +2,25 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 // Define your video IDs here ONCE. 
-const vector2D = ["1nOhwr_y7oU", "Cyl3X88KEgg", "8uF4LF56ztQ", "1iWTl8DM7Rg"];
-const motion25D = ["da7igrK6fhk", "pIdE7P860D4", "1iWTl8DM7Rg", "8qQW4LTWgtc"];
+const B2BSaaS = ["1nOhwr_y7oU", "Cyl3X88KEgg", "8uF4LF56ztQ"];
+const AICompanies = ["da7igrK6fhk", "pIdE7P860D4", "1iWTl8DM7Rg"];
+const Fintech = ["da7igrK6fhk", "pIdE7P860D4", "1iWTl8DM7Rg"];
+const Cybersecurity = ["da7igrK6fhk", "pIdE7P860D4", "1iWTl8DM7Rg"];
+
 ---
 
 <BaseLayout title="Portfolio | Foysal Abdullah">
   <main class="container" style="padding-top: 140px; padding-bottom: 80px;">
     <h1 style="text-align: center; font-size: 3.5rem; font-weight: 800; margin-bottom: 80px;">My <span class="gradient-text">Portfolio</span></h1>
     
-    <!-- 1. 2D Vector Animation -->
+    <!-- Uncategorized 1 -->
     <div style="margin-bottom: 80px;">
-      <h2 style="font-size: 2rem; margin-bottom: 25px;" class="gradient-text">01 / 2D Vector Animation</h2>
-      <p style="color: var(--text-muted); margin-bottom: 20px;">Clean, crisp scalable vector animations perfect for product explainers.</p>
+      <h2 style="font-size: 2rem; margin-bottom: 25px;" class="gradient-text">B2B SaaS</h2>
+      <p style="color: var(--text-muted); margin-bottom: 20px;">Product launches, feature demos, UI explainers, and conversion-focused motion videos that make complex SaaS products easy to understand.</p>
       
       <!-- Responsive Grid for Desktop & Mobile -->
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
-        {vector2D.map((id) => (
+        {B2BSaaS.map((id) => (
           <div class="vid-card" onclick={`openLightbox('${id}')`}>
             <img src={`https://img.youtube.com/vi/${id}/maxresdefault.jpg`} alt="Video Thumbnail" />
             <div class="vid-play-icon">▶</div>
@@ -26,14 +29,30 @@ const motion25D = ["da7igrK6fhk", "pIdE7P860D4", "1iWTl8DM7Rg", "8qQW4LTWgtc"];
       </div>
     </div>
 
-    <!-- 2. 2.5D Motion Graphics -->
+    <!-- Uncategorized 1 -->
     <div style="margin-bottom: 80px;">
-      <h2 style="font-size: 2rem; margin-bottom: 25px;" class="gradient-text">02 / 2.5D Motion Graphics</h2>
-      <p style="color: var(--text-muted); margin-bottom: 20px;">Adding depth to 2D assets using dynamic camera moves and parallax.</p>
+      <h2 style="font-size: 2rem; margin-bottom: 25px;" class="gradient-text">AI companies</h2>
+      <p style="color: var(--text-muted); margin-bottom: 20px;">Turn complex AI products, agents, and workflows into clear, futuristic product stories through UI-driven motion and visual storytelling.</p>
       
       <!-- Responsive Grid for Desktop & Mobile -->
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
-        {motion25D.map((id) => (
+        {AICompanies.map((id) => (
+          <div class="vid-card" onclick={`openLightbox('${id}')`}>
+            <img src={`https://img.youtube.com/vi/${id}/maxresdefault.jpg`} alt="Video Thumbnail" />
+            <div class="vid-play-icon">▶</div>
+          </div>
+        ))}
+      </div>
+    </div>
+    
+    <!-- Uncategorized 1 -->
+    <div style="margin-bottom: 80px;">
+      <h2 style="font-size: 2rem; margin-bottom: 25px;" class="gradient-text">Fintech</h2>
+      <p style="color: var(--text-muted); margin-bottom: 20px;">Make financial products easier to understand with polished UI motion, product explainers, and trust-focused marketing videos.</p>
+      
+      <!-- Responsive Grid for Desktop & Mobile -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+        {Fintech.map((id) => (
           <div class="vid-card" onclick={`openLightbox('${id}')`}>
             <img src={`https://img.youtube.com/vi/${id}/maxresdefault.jpg`} alt="Video Thumbnail" />
             <div class="vid-play-icon">▶</div>
@@ -42,5 +61,20 @@ const motion25D = ["da7igrK6fhk", "pIdE7P860D4", "1iWTl8DM7Rg", "8qQW4LTWgtc"];
       </div>
     </div>
 
-  </main>
+    <!-- Uncategorized 1 -->
+    <div style="margin-bottom: 80px;">
+      <h2 style="font-size: 2rem; margin-bottom: 25px;" class="gradient-text">Cybersecurity</h2>
+      <p style="color: var(--text-muted); margin-bottom: 20px;">Visualize invisible threats, security systems, and technical workflows with cinematic motion and clear product storytelling.</p>
+      
+      <!-- Responsive Grid for Desktop & Mobile -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+        {Cybersecurity.map((id) => (
+          <div class="vid-card" onclick={`openLightbox('${id}')`}>
+            <img src={`https://img.youtube.com/vi/${id}/maxresdefault.jpg`} alt="Video Thumbnail" />
+            <div class="vid-play-icon">▶</div>
+          </div>
+        ))}
+      </div>
+    </div>
+   
 </BaseLayout>
